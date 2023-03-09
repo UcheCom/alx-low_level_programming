@@ -5,7 +5,7 @@
  * @s: string param
  *
  */
-void _puts_recursion(char *S)
+void _puts_recursion(char *s)
 {
 	if (*s == '\0')
 	{
