@@ -4,7 +4,7 @@
 /**
  * Main -> program that multiplies two arguments
  * @argc: argc param
- * @argv: argv is array of the param
+ * @argv: an array of the command listed
  * Return: 0 for success
  */
 int main(int argc, char *argv[])
@@ -14,7 +14,7 @@ int main(int argc, char *argv[])
 	if (argc != 3)
 	{
 		printf("%s\n", "ERROR");
-		return (0);
+		return (1);
 	}
 	num1 = atoi(argv[1]);
 	num2 = atoi(argv[2]);
