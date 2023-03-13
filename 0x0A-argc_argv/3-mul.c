@@ -3,7 +3,7 @@
 
 /**
  * Main -> program that multiplies two numbers
- * @argc: argc param
+ * @argc: number of arguments
  * @argv: an array of the command listed
  * Return: 0 for success
  */
