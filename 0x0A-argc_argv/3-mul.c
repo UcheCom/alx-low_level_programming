@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-
+#include "main.h"
 /**
  * Main -> program that multiplies two numbers
  * @argc: number of arguments
@@ -11,7 +11,7 @@ int main(int argc, char *argv[])
 {
 	int result, num1, num2;
 
-	if (argc != 2)
+	if (argc != 3)
 	{
 		printf("%s\n", "Error");
 		return (1);
