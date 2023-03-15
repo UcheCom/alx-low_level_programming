@@ -5,8 +5,7 @@
 /**
  * _strdup - duplicate to new memory space location
  * @str: string to be copied
- * Return: On success, the _strdup function returns a pointer the duplicated string
- * returns NULL if str = NULL
+ * Return: On success, the _strdup function returns a pointer the duplicated string returns NULL if str = NULL
  */
 
 char *_strdup(char *str)
