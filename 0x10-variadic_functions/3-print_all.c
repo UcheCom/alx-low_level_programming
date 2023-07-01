@@ -10,7 +10,7 @@
 void print_all(const char * const format, ...)
 {
 	int m = 0;
-	char *st,
+	char *st;
 	char *sp = "";
 	va_list args;
 
@@ -38,14 +38,15 @@ void print_all(const char * const format, ...)
 						printf("%s%s", sp, st);
 						break;
 					default:
-						m
 						m++;
-					continue;
+						continue;
 			}
 			sp = ", ";
-				m++;
-			}
+			m++;
+
+		}
 	}
+
 	printf("\n");
 	va_end(args);
 }
