@@ -35,18 +35,16 @@ void print_all(const char * const format, ...)
 					st = va_arg(args, char *);
 					if (!st)
 						st = "(nil)";
-						printf("%s%s", sp, st);
-						break;
-					default:
-						m++;
-						continue;
+					printf("%s%s", sp, st);
+					break;
+				default:
+					m++;
+					continue;
 			}
 			sp = ", ";
 			m++;
-
 		}
 	}
-
 	printf("\n");
 	va_end(args);
 }
