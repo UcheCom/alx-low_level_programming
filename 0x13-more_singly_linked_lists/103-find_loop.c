@@ -22,7 +22,7 @@ listint_t *find_listint_loop(listint_t *head)
 	if (near == far)
 	{
 	far = head;
-	while (far != fast)
+	while (far != near)
 	{
 	far = far->next;
 	near = near->next;
