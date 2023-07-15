@@ -34,7 +34,7 @@ void chk_elf(unsigned char *e_ident)
 		    e_ident[i] != 'L' &&
 		    e_ident[i] != 'F')
 		{
-			printf(STDERR_FILENO, "Error: Not an ELF file\n");
+			dprintf(STDERR_FILENO, "Error: Not an ELF file\n");
 			exit(98);
 		}
 	}
@@ -107,7 +107,7 @@ void print_data(unsigned char *e_ident)
 		printf("2's complement, big endian\n");
 		break;
 	default:
-		printf(__attribute__((unused))"<unknown: %x>\n", e_ident[EI_CLASS]);
+		printf("<unknown: %x>\n", e_ident[EI_CLASS]);
 	}
 }
 
@@ -244,12 +244,12 @@ void print_entry(unsigned long int e_entry, unsigned char *e_ident)
 }
 
 /**
- * close_elf - Closes an ELF file.
+ * cls_elf - Closes an ELF file.
  * @elf: The file descriptor of the ELF file.
  *
  * Description: If the file cannot be closed - exit code 98.
  */
-void close_elf(int elf)
+void cls_elf(int elf)
 {
 	if (close(elf) == -1)
 	{
@@ -284,7 +284,7 @@ int main(int __attribute__((__unused__)) argc, char *argv[])
 	hd = malloc(sizeof(Elf64_Ehdr));
 	if (hd == NULL)
 	{
-		close_elf(o);
+		cls_elf(o);
 		dprintf(STDERR_FILENO, "Error: Can't read file %s\n", argv[1]);
 		exit(98);
 	}
@@ -292,12 +292,12 @@ int main(int __attribute__((__unused__)) argc, char *argv[])
 	if (r == -1)
 	{
 		free(hd);
-		close_elf(o);
+		cls_elf(o);
 		dprintf(STDERR_FILENO, "Error: `%s`: No such file\n", argv[1]);
 		exit(98);
 	}
 
-	check_elf(hd->e_ident);
+	chk_elf(hd->e_ident);
 	printf("ELF Header:\n");
 	print_magic(hd->e_ident);
 	print_class(hd->e_ident);
@@ -309,6 +309,6 @@ int main(int __attribute__((__unused__)) argc, char *argv[])
 	print_entry(hd->e_entry, hd->e_ident);
 
 	free(hd);
-	close_elf(o);
+	cls_elf(o);
 	return (0);
 }
