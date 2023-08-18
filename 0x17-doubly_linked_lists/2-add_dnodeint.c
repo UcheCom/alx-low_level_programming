@@ -5,7 +5,7 @@
  * @head: pointer to the head of the list.
  * @n: value of node
  *
- *Return: number of nodes.
+ * Return: number of nodes.
  */
 dlistint_t *add_dnodeint(dlistint_t **head, const int n)
 {
