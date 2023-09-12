@@ -21,7 +21,7 @@ shash_table_t *shash_table_create(unsigned long int size)
 	if (ht->array == NULL)
 		return (NULL);
 	for (x = 0; x < size; x++)
-		ht->array[i] = NULL;
+		ht->array[x] = NULL;
 	ht->shead = NULL;
 	ht->stail = NULL;
 
