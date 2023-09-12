@@ -14,16 +14,15 @@ char *hash_table_get(const hash_table_t *ht, const char *key)
 	hash_node_t *node;
 	unsigned long int index;
 
-	if (!ht || !key)
+	if (!ht || !key || *key == '\0')
 		return (NULL);
 
-	index = hash_djb2((unsigned char *)key) %  ht->size;
-
+	index = hash_djb2((unsigned char *)key) % ht->size;
 	node = ht->array[index];
 	while (node)
 	{
 		if (strcmp(node->key, key) == 0)
-			return (node->key);
+			return (node->value);
 		node = node->next;
 	}
 
