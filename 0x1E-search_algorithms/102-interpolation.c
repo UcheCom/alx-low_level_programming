@@ -31,7 +31,7 @@ int interpolation_search(int *array, size_t size, int value)
 
 		if (array[n] == value)
 			return (n);
-		if (array[i] > value)
+		if (array[n] > value)
 			h = n - 1;
 		else
 			l = n + 1;
